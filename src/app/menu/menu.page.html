@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>menu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-card>
+   <ion-card>
+  
+    
+      <ion-button (click) = 'pageCadastro()' >  Cadastro (Cliente/Fornecedor)</ion-button>
+  
+      <ion-button (click) = 'pageReceber()' > Contas a Receber </ion-button>
+
+      <ion-button (click) = 'pagePagar()'> Contas a Pagar </ion-button>
+
+      <ion-button (click) = 'pageLogin()'>Sair</ion-button>
+     
+  
+  </ion-card>
+  </ion-card>
+
+</ion-content>

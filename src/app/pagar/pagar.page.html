@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pagar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">pagar</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div style=" text-align: center;padding: 20px;">
+          <h1>Contas a Pagar</h1>
+  </div>
+  
+   <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label> Nome:</ion-label>
+        <ion-input [(ngModel)]="nome" placeholder="Digite seu nome:"></ion-input>
+      </ion-item>
+   
+      <ion-item> 
+        <ion-label>Vencimento: </ion-label> 
+        <ion-input type="date" [(ngModel)]="vencimento" placeholder=" 00/00/00">  </ion-input>
+      </ion-item>
+      <ion-item> 
+        <ion-label>Pagamento: </ion-label> 
+        <ion-input type="date" [(ngModel)]="pagamento" placeholder=" 00/00/00">  </ion-input>
+      </ion-item>
+      <ion-item>
+         <ion-label>Valor (R$) </ion-label> 
+        <ion-input type="number" [(ngModel)]="valor">  </ion-input> 
+      </ion-item>
+
+
+      <ion-button expand="block" (click)="cadastrar()">Cadastrar</ion-button>
+      <ion-button expand="block" (click)="limparFormulario()" >Limpar Campos</ion-button>
+
+      <ion-list>
+        <ion-item *ngFor="let item of listaCadastros; let i = index">
+          {{ item.nome }} - {{ item.valor }}
+          <ion-button (click)="excluir(i)">X</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  
+
+
+</ion-content>
